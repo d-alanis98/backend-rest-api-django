@@ -1,0 +1,19 @@
+# Specifies the version of docker-compose syntax 
+version: "3.9"
+
+services:
+  # We define a service named app
+  app: 
+    # Options to build the Dockerfile
+    build:
+      # Specifies that we will build the image from our current directory (the root directory of the path from where docker-compose is executed)
+      context: .
+    # Port mappings, in this case, we map port 8000 on the host to port 8000 on the container
+    ports:
+      - "8000:8000"
+    # Mapping host directories to directories on the container. This is done so that the updates in the local folder reflect on the container in real time
+    volumes:
+      - "./app:/app"
+    # Command used to start the service
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
