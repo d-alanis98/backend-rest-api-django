@@ -8,6 +8,9 @@ services:
     build:
       # Specifies that we will build the image from our current directory (the root directory of the path from where docker-compose is executed)
       context: .
+      # Additional arguments for the context
+      args:
+        - DEV=true
     # Port mappings, in this case, we map port 8000 on the host to port 8000 on the container
     ports:
       - "8000:8000"
