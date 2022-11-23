@@ -14,7 +14,7 @@ services:
     # Port mappings, in this case, we map port 8000 on the host to port 8000 on the container
     ports:
       - "8000:8000"
-    # Mapping host directories to directories on the container. This is done so that the updates in the local folder reflect on the container in real time
+    # Mapping host directories to directories on the container. This is done so that the updates in the local folder reflect on the container in real time and vice versa
     volumes:
       - "./app:/app"
     # Command used to start the service
